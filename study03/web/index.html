@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="index.css">
+    <title>Eel</title>
+</head>
+<body>
+    <form id="form1" action="#">
+        <label for="name">探したい名前を入力して下さい</label><br>
+        <input type="text" id="input-name"><br>
+        <label for="name">保存先のPATHを入力してください</label><br>
+        <input type="text" id="path">
+        <input type="button" onclick="run_search()" value="送信">
+    </form>
+    
+    <div id='area'>
+    <p>検索した結果、、、</p><br>
+    <textarea id="result" rows="4" cols="40"></textarea><br>
+    <p id="result"></p>
+    </div>
+
+    <script type="text/javascript" src="/eel.js"></script>
+    <script src="../index.js"></script>
+
+</body>
+</html>
