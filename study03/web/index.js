@@ -7,7 +7,7 @@ function run_search() {
   }
 
   // ここでPython側の処理を実行しに行く
-  eel.search(keyword);
+  eel.search(keyword,path);
 }
 
 eel.expose(run_js_from_python);
