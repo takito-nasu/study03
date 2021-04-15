@@ -7,9 +7,9 @@ import pandas as pd
 @eel.expose
 # ここからがバックエンドで行う処理
 # ここに鬼滅サーチの関数を入れる
-def search (keyword):
+def search (keyword,path):
     call = ''
-    path = ''
+    save_path = ''
     try:
         # CSVファイルをリストに変換
         df = pd.read_csv('./web/names.csv')
@@ -26,11 +26,12 @@ def search (keyword):
             names.append(call)
 
         df = pd.DataFrame(names,columns=['キャラ名'])
-        if len(path)==0:
+        save_path = path
+        if save_path == "":
           df.to_csv('./web/namae.csv',index=False)
         # CSVファイル作成
         else:
-          df.to_csv('.'+path + 'sourse.csv',index=False)
+          df.to_csv("{}/sourse.csv".format(save_path),encoding="utf_8-sig")
     finally:
         eel.run_js_from_python(result)
 
