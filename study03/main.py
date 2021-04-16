@@ -16,7 +16,6 @@ def search (keyword,path):
         names = list(df['キャラ名'])
         # names =df.values.tolist()
         call = keyword
-        path = path
         if call in names:
             result = call + 'が見つかりました'
             print(result)
